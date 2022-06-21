@@ -37,8 +37,8 @@ Resources:
           !Sub "${EnvironmentName}-VPCID"
       SecurityGroupIngress:
       - IpProtocol: tcp
-        FromPort: 8080
-        ToPort: 8080
+        FromPort: 80
+        ToPort: 80
         CidrIp: 0.0.0.0/0
       - IpProtocol: tcp
         FromPort: 22
@@ -145,13 +145,8 @@ Resources:
       Path: "/"
       Roles:
         - !Ref InstanceRole
-  #Outputs:
-    #LoadBalancerDNS:
-            #Description: A reference to load balancer domain name
-            #Value: !Sub
-                  #- http://${DNSName}
-                  #- DNSName: !GetAtt WebAppLB.DNSName
-            #Export:
-              #Name: !Sub ${Environmentname}-LBDNS
+  
+
+    
 
 
